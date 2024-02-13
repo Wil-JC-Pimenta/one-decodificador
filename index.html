@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Encriptador</title>
+</head>
+<body>
+    <head >
+        <img src="assets/img/criptografia-de-dados.png" id="icone__head" alt="Icone de criptografia">
+    </head>
+    <main class="container">
+        <h1 class="titulo-principal">Encriptador </h1>
+       
+        <textarea id="text-input" placeholder="Insira o texto aqui"></textarea>
+        <p>Apenas letras minúsculas, sem caracteres especiais e sem acento.</p>
+        <div id="secao">
+            <section id="option-select">
+                <button onclick="processText('encrypt')">Criptografar</button>
+                <button onclick="processText('decrypt')">Descriptografar</button>
+            </section>
+
+            <button onclick="copyToClipboard()">Copiar</button>
+        
+        </div>
+    </main>
+    <aside>
+        <div id="result-container">
+            <p id="result">Ainda não há mensagens</p>
+        </div>
+    </aside>
+
+    <footer>
+
+    <h6>Desenvolvidor por Wilker J C Pimenta</h6>
+
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
