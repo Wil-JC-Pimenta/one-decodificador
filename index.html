@@ -7,34 +7,38 @@
     <title>Encriptador</title>
 </head>
 <body>
-    <head >
+    <header>
         <img src="assets/img/criptografia-de-dados.png" id="icone__head" alt="Icone de criptografia">
-    </head>
+     
+    </header>
+
     <main class="container">
-        <h1 class="titulo-principal">Encriptador </h1>
-       
-        <textarea id="text-input" placeholder="Insira o texto aqui"></textarea>
-        <p>Apenas letras minúsculas, sem caracteres especiais e sem acento.</p>
-        <div id="secao">
-            <section id="option-select">
+        <h1 class="titulo-principal">Encriptador</h1>
+        <section>
+            <textarea id="text-input" placeholder="Insira o texto aqui"></textarea><br>
+        </section>
+
+          <span class="alerta"> <p><img src="assets/img/exclamacao.png" id="icone_exclamacao" alt="ìcone de exclamação">&nbsp;Apenas letras minúsculas, sem caracteres especiais e sem acento.</p></span>
+     
+
+        <section id="secao">
+            <div>
                 <button onclick="processText('encrypt')">Criptografar</button>
                 <button onclick="processText('decrypt')">Descriptografar</button>
-            </section>
-
+            </div>
             <button onclick="copyToClipboard()">Copiar</button>
-        
-        </div>
+        </section>
     </main>
+
     <aside>
         <div id="result-container">
+            <img src="assets/img/lupa.png" id="lupa">
             <p id="result">Ainda não há mensagens</p>
         </div>
     </aside>
 
     <footer>
-
-    <h6>Desenvolvidor por Wilker J C Pimenta</h6>
-
+        <h6>Desenvolvido por Wilker J C Pimenta</h6>
     </footer>
 
     <script src="main.js"></script>

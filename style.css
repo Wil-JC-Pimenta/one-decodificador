@@ -1,7 +1,19 @@
+:root {
+    --background-color: blue;
+    --text-color: #f7ecec;
+    --button-background-color: #1992c2;
+    --button-hover-background-color: #5107ff;
+}
+*{
+    margin: 0;
+    padding: 2px;
+}
 body {
+    box-sizing: border-box;
+    width: 98%;
     font-family: 'Arial', sans-serif;
-    background-color:blue;
-    color: #f7ecec;
+    background-color: var(--background-color);
+    color: var(--text-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,96 +22,236 @@ body {
     padding: auto;
     gap: 10px;
 }
-#icone__head{
-    height:20%;
-    max-width:20%;
-    
+
+
+
+header {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding-top: 100px;
+}
+
+#icone__head {
+    height: 48px;
+    width: 120px;
+
 }
 
 .titulo-principal {
-    max-width: 480px;
-    text-align: center;
-    margin: 60px auto;
-    font-family: 'Courier New', Courier, monospace;
-    color: #fff;
-}
-
-h1 {
     color: rgba(9, 247, 215, 0.685);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: medium;
-    font-weight: 800;
     font-size: 2.5rem;
+    font-weight: 800;
     text-shadow: 2px 2px 4px rgba(10, 0, 153, 0.8);
 }
 
 .container {
     text-align: center;
-    justify-content: center;
-    display: initial;
-
 }
 
 textarea {
+    align-items: center;
     width: 80%;
     height: 100px;
     background: none;
     border: none;
     outline: none;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    background-color: #1992c2;
     color: white;
     text-shadow: 2px 2px 4px rgba(10, 0, 153, 0.8);
     font-size: 1rem;
 }
 
+.alerta {
+    display: inline-block;
+    gap: 50px;
+}
+
+#icone_exclamacao {
+    width: 20px;
+    height: 20px;
+}
+
 button {
+    height: 36px;
     width: 40%;
-    height: auto;
     margin-top: 10px;
     padding: auto;
-    background-color: #1992c2; /* Cor de fundo do botão */
-    color: white; /* Cor do texto do botão */
+    background-color: var(--button-background-color);
+    color: white;
     border: none;
-    border-radius: 5px; /* Bordas arredondadas */
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #5107ff;
+    background-color: var(--button-hover-background-color);
 }
 
-
 #result-container {
-    display: block;
     border: #333 solid;
     border-radius: 5px;
     font-size: 1rem;
     color: #070707;
     text-shadow: 2px 2px 4px rgba(10, 0, 153, 0.8);
-    background-color:#fff;
+    background-color: #fff;
     width: 80%;
     height: 350px;
     overflow: auto;
 }
-#result{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+#result {
     max-width: 60%;
     padding: 10%;
-    word-wrap: break-word; 
+    word-wrap: break-word;
 }
-#secao {
-    display: block;
+
+#lupa {
+    width: 70%;
+    height: 200px;
 }
 
 footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #333; 
+    background-color: #333;
     color: #fff;
     text-align: center;
     padding: 10px 0;
+}
+
+
+/* Responsividade para desktop */
+@media only screen and (min-width: 1025px) {
+    body {
+        font-size: 1rem; /* Reset font size */
+    }
+
+    /* Estilos específicos para o cabeçalho em dispositivos de mesa */
+    header {
+        top: 20px;
+        left: 20px;
+    }
+
+    #icone__head {
+        gap: 40px;
+    }
+
+    .titulo-principal {
+        font-size: 2.5rem;
+    }
+
+    .container {
+        text-align: center;
+    }
+
+    textarea {
+        width: 80%;
+    }
+
+    .alerta {
+        gap: 50px;
+    }
+
+    #icone_exclamacao {
+        width: 20px;
+        height: 20px;
+    }
+
+    button {
+        width: 40%;
+    }
+
+    #result-container {
+        width: 80%;
+       
+    }
+
+    #result {
+        max-width: 60%;
+       
+    }
+
+    #lupa {
+        width: 70%;
+        height: 200px;
+    }
+
+    footer {
+        padding: 10px 0;
+    }
+}
+/* Responsividade para celular */
+@media only screen and (max-width: 768px) {
+    html {
+        font-size: 50%; /* Reduzir o tamanho da fonte para melhorar a legibilidade em dispositivos móveis */
+    }
+
+    body {
+        font-size: 1.5rem; /* Ajustar o tamanho base da fonte para melhor legibilidade em dispositivos móveis */
+        flex-direction: column; /* Alterar a direção do flex container para coluna */
+    }
+
+
+    header {
+        position: relative; /* Resetar a posição para o cabeçalho */
+        top: initial;
+        left: initial;
+    }
+
+    #icone__head {
+        gap: initial; /* Resetar o espaçamento entre ícones */
+    }
+
+    .titulo-principal {
+        font-size: 2rem; /* Ajustar o tamanho do título */
+    }
+
+    .container {
+        text-align: left; /* Ajustar o alinhamento do texto */
+    }
+
+    textarea {
+        width: 100%; /* Fazer a área de texto ocupar toda a largura */
+    }
+
+    .alerta {
+        gap: 10px; /* Ajustar o espaçamento entre elementos de alerta */
+    }
+
+    #icone_exclamacao {
+        width: 16px; /* Reduzir o tamanho do ícone de exclamação */
+        height: 16px;
+    }
+
+    button {
+        width: 100%; /* Fazer o botão ocupar toda a largura */
+        margin-top: 20px; /* Ajustar a margem superior */
+    }
+
+    #result-container {
+        width: 100%; /* Fazer o contêiner de resultado ocupar toda a largura */
+        height: 200px; /* Reduzir a altura */
+    }
+
+    #result {
+        max-width: 100%; /* Fazer o resultado ocupar toda a largura disponível */
+        padding: 5%; /* Adicionar preenchimento interno */
+    }
+
+    #lupa {
+        width: 100%; /* Fazer a lupa ocupar toda a largura */
+        height: 150px; /* Reduzir a altura */
+    }
+
+    footer {
+        font-size: 1rem; /* Resetar o tamanho da fonte do rodapé */
+        padding: 5px 0; /* Ajustar o preenchimento */
+        margin-top:10px;
+    }
 }
